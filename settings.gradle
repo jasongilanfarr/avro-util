@@ -55,3 +55,5 @@ include 'helper:tests:helper-tests-110'
 include 'spotbugs-plugin'
 
 include 'demos:spotbugs-demo'
+
+include 'errorprone-checks'
