@@ -57,3 +57,4 @@ include 'spotbugs-plugin'
 include 'demos:spotbugs-demo'
 
 include 'errorprone-checks'
+include 'errorprone-checks:tests-14'

@@ -1,0 +1,31 @@
+/*
+ * Copyright 2021 LinkedIn Corp.
+ * Licensed under the BSD 2-Clause License (the "License").
+ * See License in the project root for license information.
+ */
+
+plugins {
+  id "java-library"
+  id "checkstyle"
+  id "jacoco"
+}
+
+dependencies {
+  testImplementation project(":errorprone-checks")
+
+  testImplementation "com.google.errorprone:error_prone_test_helpers:2.9.0"
+  testImplementation project(":test-common")
+  testImplementation project(":helper:tests:helper-tests-common")
+  testImplementation project(":helper:helper")
+  testImplementation ('org.apache.avro:avro:1.4.1') {
+    exclude group: "org.mortbay.jetty"
+    exclude group: "org.apache.velocity"
+    exclude group: "commons-lang"
+    exclude group: "org.jboss.netty"
+    exclude group: "com.thoughtworks.paranamer", module: "paranamer-ant"
+  }
+}
+
+test {
+  useTestNG()
+}
